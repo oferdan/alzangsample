@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<!-- nazev test suite  -->
+<suite name="BasicSuite">
+	<!-- nazev testu -->
+	<test name="Application Test">
+		<classes>
+			<!-- package.nazevTridy ktere chci mit v Test Suite -->
+			<class name="com.ferdano.alzasngample.JmenoTestu"></class>
+		</classes>
+	</test>
+</suite>
