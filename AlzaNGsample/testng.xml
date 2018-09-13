@@ -2,10 +2,10 @@
 <!-- nazev test suite  -->
 <suite name="BasicSuite">
 	<!-- nazev testu -->
-	<test name="Application Test">
+	<test name="Application Test" preserve-order="true">
 		<classes>
 			<!-- package.nazevTridy ktere chci mit v Test Suite -->
-			<class name="com.ferdano.alzangsample.RegistrationTest"></class>
+			<class name="com.ferdano.alzangsample.LoginTest"></class>
 		</classes>
 	</test>
 </suite>

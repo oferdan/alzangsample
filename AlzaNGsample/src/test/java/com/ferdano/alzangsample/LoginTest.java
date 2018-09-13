@@ -24,7 +24,6 @@ public class LoginTest{
 		driver = new FirefoxDriver(); // instance
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); //implicit wait
 		driver.manage().window().maximize(); //maximalizuj okno
-		
 		loginPage = new LoginPage(driver); // vytvoreni instance - konstruktor akceptuje driver	
 	}
 
