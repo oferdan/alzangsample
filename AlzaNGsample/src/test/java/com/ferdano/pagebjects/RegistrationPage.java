@@ -14,6 +14,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import io.qameta.allure.Step;
+
 public class RegistrationPage {
 
 	WebDriver driver;
@@ -116,29 +118,29 @@ public class RegistrationPage {
 	 * Methods will be use in Test Classes, thats why they are public
 	 */
 	/* ================================================ */
-	
-	//Load Alza.cz home page
-    public void goToRegPage() {
-        driver.get("https://www.alza.cz/Registration.htm");
-    }
     
     //fill forms
+	@Step("Fill email login form step.")
     public void setEmailLogin(String email) {
         emailLogin.sendKeys(email);
     }
     
+	@Step("Fill password form step.")
     public void setPassword(String password) {
         passwordElem.sendKeys(password);
     }
     
+	@Step("Fill confirm password form step.")
     public void setPasswordConfirm(String password) {
         passwordConfirm.sendKeys(password);
     }
     
+	@Step("Fill phone form step.")
     public void setPhone(String phone) {
         phoneElem.sendKeys(phone);
     }
     
+	@Step("Click next.")
     public void clickNext() {
     	btnNext.click();
     }

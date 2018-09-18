@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.qameta.allure.Step;
+
 public class AddedToBasketPage {
 	WebDriver driver;
 	public WebDriverWait wait;
@@ -29,20 +31,26 @@ public class AddedToBasketPage {
 	// Product page elems
 	// ===================
 	// Go to basket button
-	@FindBy(xpath="//div[@class='obuttons crossbuttons crossTopbuttons']//a[@href='/Order1.htm']")
+	@FindBy(xpath="//div[@class='obuttons crossbuttons crossTopbuttons']//a[@class='btnx normal green arrowedRight floatRight toOrder1']")
 	WebElement goToBasketButtonElem;
 	
 	// Go back to product listing
-	@FindBy(xpath="//div[@class='obuttons crossbuttons crossTopbuttons']//a[@href='javascript:history.back()']")
-	WebElement goBackToProductListingButtonElem;
+	@FindBy(xpath="//div[@class='obuttons crossbuttons crossTopbuttons']//a[@class='btnx normal grey arrowedLeft floatLeft']")
+	WebElement goBackToProductPageButtonElem;
+	
+
 	
 	// Methods
 	// ========
+	@Step("Go to basket step.")
 	public void goToBasket() {
 		goToBasketButtonElem.click();
 	}
 	
-	public void goBackToProductListing() {
-		goBackToProductListingButtonElem.click();
+	@Step("Go back to product page step.")
+	public void goBackToProductPage() {
+		goBackToProductPageButtonElem.click();
 	}
+	
+
 }

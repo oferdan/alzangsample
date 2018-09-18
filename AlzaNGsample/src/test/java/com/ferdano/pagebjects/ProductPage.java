@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.qameta.allure.Step;
+
 public class ProductPage {
 	WebDriver driver;
 	public WebDriverWait wait;
@@ -29,11 +31,12 @@ public class ProductPage {
 	// Product page elems
 	// ===================
 	// Add to basket button
-	@FindBy(className="alzaico-f-basket")
+	@FindBy(className="btnx normal green buy single")
 	WebElement addToBasketButtonElem;
 	
 	// Methods
 	// ========
+	@Step("Add product to basket step.")
 	public void addToBasket() {
 		addToBasketButtonElem.click();
 	}

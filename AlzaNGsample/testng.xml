@@ -1,11 +1,17 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <!-- nazev test suite  -->
 <suite name="BasicSuite">
+  <listeners>
+        <listener class-name="com.ferdano.utilities.TestListener"/>
+  </listeners>
 	<!-- nazev testu -->
-	<test name="Application Test" preserve-order="true">
+	<test name="Nazev testu v TestNG" preserve-order="true">
 		<classes>
 			<!-- package.nazevTridy ktere chci mit v Test Suite -->
+			<class name="com.ferdano.alzangsample.OrderMostExpensiveTelevisionTest"></class>
 			<class name="com.ferdano.alzangsample.LoginTest"></class>
+			<class name="com.ferdano.alzangsample.RegistrationTest"></class>
+			<class name="com.ferdano.alzangsample.SortingProductTest"></class>
 		</classes>
 	</test>
 </suite>
