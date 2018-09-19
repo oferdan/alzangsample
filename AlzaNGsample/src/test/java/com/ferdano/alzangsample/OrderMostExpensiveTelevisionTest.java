@@ -21,22 +21,22 @@ import io.qameta.allure.Story;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 
-import java.lang.reflect.Method;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 
-//allure anotations
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+//allure annotations
 @Listeners({ TestListener.class })
-@Epic("Epic nazev testu v Allure")
-@Feature("Ordering most expensive television test.")
+@Epic("Alza.cz example tests.")
+@Feature("Ordering tests.")
 
 public class OrderMostExpensiveTelevisionTest {
 	private static WebDriver driver;
-	
-	//Pages declarations
+	//Pages declaration
 	static HomePage homePage; 
 	static ProductListingPage productListingPage; 
 	static ProductPage productPage;
@@ -46,11 +46,11 @@ public class OrderMostExpensiveTelevisionTest {
 
 	@BeforeClass (description="Class Level Setup Allure")
 	public void beforeClass() {
-		//Log.startLog(this.getClass().getSimpleName()); //log start of class
-		
+		//Used for Maven - auto downloads latest webdriver binaries
+		//WebDriverManager.firefoxdriver().setup(); //Maven
 		driver = new FirefoxDriver(); // instance
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); //implicit wait
-		driver.manage().window().maximize(); //maximalize okno
+		driver.manage().window().maximize(); //maximize browser window
 		
 		// instantiate Pages
 		homePage = new HomePage(driver);	
@@ -61,12 +61,12 @@ public class OrderMostExpensiveTelevisionTest {
 		shippingPaymentPage = new ShippingPaymentPage(driver);
 	}
 
-	@Test (priority = 0, description="Ordering test - most expensive TV - TestNG")
+	@Test (priority = 0, description="Ordering most expensive TV")
 	//allure annotations
 	@Severity (SeverityLevel.CRITICAL)
-	@Description ("Searches for most expensive televison, adds it to basket and finishes order. - Allure")
-	@Story ("Story story")
-	public void orderMostExpensiveTelevisionTest(Method method) throws InterruptedException {
+	@Description ("Searches for most expensive televison, adds it to basket and finishes order.")
+	@Story ("Ordering.")
+	public void orderMostExpensiveTelevisionTest() throws InterruptedException {
 		//Log.startMethodLog(method.getName()); // log start of the method
 		
 		//navigation
@@ -126,7 +126,8 @@ public class OrderMostExpensiveTelevisionTest {
 	@AfterClass (description="Class Level Teardown")
 	public void afterClass() {
 		//Log.endLog(this.getClass().getSimpleName()); //log end of class
-		//driver.quit();
+		Log.info("Quitting driver.");
+		driver.quit();
 	}
 
 }

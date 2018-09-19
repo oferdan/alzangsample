@@ -1,6 +1,5 @@
 package com.ferdano.alzangsample;
 
-import java.lang.reflect.Method;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -15,37 +14,44 @@ import com.ferdano.pagebjects.LoginPage;
 import com.ferdano.utilities.Log;
 import com.ferdano.utilities.TestListener;
 
+import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 
-//allure anotations
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+//allure annotations
 @Listeners({ TestListener.class })
-@Epic("Epic nazev testu v Allure")
-@Feature("Log in with credentials test.")
+@Epic("Alza.cz example tests.")
+@Feature("Log in tests.")
 
 public class LoginTest{
-	
 	private static WebDriver driver;
-	static LoginPage loginPage; //deklarace
+	// Pages declaration
+	static LoginPage loginPage;
 	static HomePage homePage; 
 
 	@BeforeClass
 	public void beforeClass() {
-		Log.startLog(this.getClass().getSimpleName()); //log start
+		//Log.startLog(this.getClass().getSimpleName()); //log start - moved do Listener
 		
-		//WebDriverManager.firefoxdriver().setup(); //pro automaticke stazeni driveru bez nastavovani cesty
+		//Used for Maven - auto downloads latest webdriver binaries
+		//WebDriverManager.firefoxdriver().setup(); //Maven
 		driver = new FirefoxDriver(); // instance
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); //implicit wait
-		driver.manage().window().maximize(); //maximalizuj okno
+		driver.manage().window().maximize(); //maximize browser window
 		
 		//instantiate Pages
 		homePage = new HomePage(driver);
-		loginPage = new LoginPage(driver); //vytvoreni instance - konstruktor akceptuje driver	
+		loginPage = new LoginPage(driver); 	
 	}
 
-	@Test
-	public void validLoginTest(Method method) throws InterruptedException {
-		Log.startMethodLog(method.getName()); //log method start
+	@Test (priority=0, description="Log in with valid credentials.")
+	@Description("Log in with valid credentials.")
+	@Story("Logging in with different credentials.")
+	public void validLoginTest() throws InterruptedException {
+		//Log.startMethodLog(method.getName()); //log method start - moved do Listener
 		
 		//navigation
 		Log.info("Opening home page.");
@@ -60,12 +66,14 @@ public class LoginTest{
 		Log.info("Clicking login.");
 		loginPage.clickLoginButton();
 		
-		Log.endMethodLog(method.getName());  //log method end
+		//Log.endMethodLog(method.getName());  //log method end  - moved do Listener
 	}
 
-	@Test
-	public void invalidUsernameTest(Method method) throws InterruptedException {
-		Log.startMethodLog(method.getName());
+	@Test (priority=0, description="Log in with invalid credentials.")
+	@Description("Log in with invalid credentials.")
+	@Story("Logging in with different credentials.")
+	public void invalidUsernameTest() throws InterruptedException {
+		//Log.startMethodLog(method.getName()); //- moved do Listener
 		
 		//navigation
 		Log.info("Opening home page.");
@@ -81,14 +89,15 @@ public class LoginTest{
 		loginPage.clickLoginButton();
 		//verify error text
 		Log.info("Verifying error text.");
-		loginPage.vefifyErrorText("Kombinace zadaného emailu a hesla neexistuje.");
+		loginPage.verifyErrorText("Kombinace zadaného emailu a hesla neexistuje.");
 		
-		Log.endMethodLog(method.getName()); //log method end
+		//Log.endMethodLog(method.getName()); //log method end - moved do Listener
 	}
 	
 	@AfterClass
 	public void afterClass() {
-		Log.endLog(this.getClass().getSimpleName()); //log end
+		//Log.endLog(this.getClass().getSimpleName()); //log end - moved do Listener
+		Log.info("Quitting driver");
 		driver.quit();
 	}
 

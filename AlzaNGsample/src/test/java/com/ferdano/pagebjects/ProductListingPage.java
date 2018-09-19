@@ -6,8 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.ferdano.utilities.Log;
-
 import io.qameta.allure.Step;
 
 public class ProductListingPage {
@@ -94,7 +92,7 @@ public class ProductListingPage {
 		secondProductElem.click();
 	}
 	
-	@Step("Open product page of product on position X step.")
+	@Step("Open product page of product on position: \"{0}\" step.")
 	public void openProductOnPosition(Integer position) {
 		switch (position) {
 		case 1: openFirstProduct();

@@ -9,6 +9,7 @@
 
 package com.ferdano.pagebjects;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -113,29 +114,31 @@ public class RegistrationPage {
 	WebElement btnNext;
 
 
-	/* ================================================ */
-	/* 
-	 * Methods will be use in Test Classes, thats why they are public
-	 */
-	/* ================================================ */
+	// ========
+	// Methods
+	// ========
     
     //fill forms
-	@Step("Fill email login form step.")
+	@Step("Fill email login form with {0} step.")
     public void setEmailLogin(String email) {
+		//cleans text form, because @ remains before appended text
+		emailLogin.sendKeys(Keys.CONTROL + "a");
+    	emailLogin.sendKeys(Keys.DELETE); 
+    	emailLogin.clear(); //not enough
         emailLogin.sendKeys(email);
     }
     
-	@Step("Fill password form step.")
+	@Step("Fill password form with {0} step.")
     public void setPassword(String password) {
         passwordElem.sendKeys(password);
     }
     
-	@Step("Fill confirm password form step.")
+	@Step("Fill confirm password form with {0} step.")
     public void setPasswordConfirm(String password) {
         passwordConfirm.sendKeys(password);
     }
     
-	@Step("Fill phone form step.")
+	@Step("Fill phone form with {0} step.")
     public void setPhone(String phone) {
         phoneElem.sendKeys(phone);
     }

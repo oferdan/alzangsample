@@ -3,7 +3,6 @@ package com.ferdano.utilities;
 
 //import org.apache.log4j.Logger; //log4j 1.21
 import org.apache.logging.log4j.*; //log4j2
-import org.testng.ITestResult;
 
 
 public class Log {
@@ -14,6 +13,7 @@ public class Log {
  
     //We can use it when starting tests
     public static void startLog (String testClassName){
+    	Log.info("============================================================");
         Log.info("===== Test Class: "+testClassName +" is Starting... ======");
     }
  
@@ -24,6 +24,7 @@ public class Log {
     
     //We can use it when starting tests
     public static void startMethodLog (String testMethodName){
+    	Log.info("------------------------------------------------------------");
         Log.info("=== Test Method: "+testMethodName +" is Starting... ====");
     }
  

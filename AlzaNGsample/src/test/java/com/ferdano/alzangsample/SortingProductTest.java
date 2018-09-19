@@ -16,13 +16,17 @@ import com.ferdano.pagebjects.ProductPage;
 import com.ferdano.utilities.Log;
 import com.ferdano.utilities.TestListener;
 
+import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 
-//allure anotations
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+//allure annotations
 @Listeners({ TestListener.class })
-@Epic("Epic nazev testu v Allure")
-@Feature("Sorting deascend and ascend test.")
+@Epic("Alza.cz example tests.")
+@Feature("Sorting tests.")
 
 public class SortingProductTest {
 	private static WebDriver driver;
@@ -33,18 +37,21 @@ public class SortingProductTest {
 
 	@BeforeClass
 	public void beforeClass() {
-		// Log.startLog(this.getClass().getSimpleName()); //log start of class
+		//Used for Maven - auto downloads latest webdriver binaries
+		//WebDriverManager.firefoxdriver().setup(); //Maven
 		driver = new FirefoxDriver(); // instance
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); // implicit wait
-		driver.manage().window().maximize(); // maximalize okno
-
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); //implicit wait
+		driver.manage().window().maximize(); //maximize browser window
+		
 		// instantiate Pages
 		homePage = new HomePage(driver);
 		productListingPage = new ProductListingPage(driver);
 		productPage = new ProductPage(driver);
 	}
 
-	@Test
+	@Test (priority=0, description="Descend sorting.")
+	@Description("Sorts products and validates if sorting works by comparing price of first and second product in product listing.")
+	@Story("Ascend and descend sorting.")
 	public void sortingDescendProductTest() throws InterruptedException {
 		//navigation
 		Log.info("Opening home page.");
@@ -62,7 +69,9 @@ public class SortingProductTest {
 		Assert.assertTrue(productListingPage.isPriceOfFistBiggerThanSecondProduct());
 	}
 	
-	@Test
+	@Test (priority=0, description="Ascend sorting.")
+	@Description("Sorts products and validates if sorting works by comparing price of first and second product in product listing.")
+	@Story("Ascend and descend sorting.")
 	public void sortingAscendProductTest() throws InterruptedException {
 		//navigation
 		Log.info("Opening home page.");
@@ -73,15 +82,15 @@ public class SortingProductTest {
 		//sorting
 		Log.info("Sorting products.");
 		productListingPage.sortAscend();
-		//wait for sorting to be done
 		//TODO better approach: https://www.swtestacademy.com/selenium-wait-javascript-angular-ajax/ 
-		//Thread.sleep(2000); // moved to method
+		//Thread.sleep(2000); // wait for sorting to be done - moved to method
 		Log.info("Checking if products are sorted ascending.");
 		Assert.assertFalse(productListingPage.isPriceOfFistBiggerThanSecondProduct());
 	}
 	
 	@AfterClass
 	public void afterClass() {
+		Log.info("Quitting driver.");
 		driver.quit();
 	}
 }

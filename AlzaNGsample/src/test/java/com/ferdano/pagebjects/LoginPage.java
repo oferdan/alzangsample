@@ -64,17 +64,21 @@ public class LoginPage{
     }
     
     //fill forms
-	@Step("Fill email login form step.")
+	@Step("Fill email login form with \"{0}\" step.")
     public void setEmailLogin(String email) throws InterruptedException {
-    	emailLogin.sendKeys(Keys.DELETE); //cleans text form, because @ remains before appended text
-    	emailLogin.clear(); //cleans text form, because @ remains before appended text
+		//cleans text form, because @ remains before appended text
+		emailLogin.sendKeys(Keys.CONTROL + "a");
+    	emailLogin.sendKeys(Keys.DELETE); 
+    	emailLogin.clear(); //not enough
         emailLogin.sendKeys(email);
     }
     
-	@Step("Fill passwprd form step.")
+	@Step("Fill password form with: \"{0}\" step.")
     public void setPassword(String password) {
-    	passwordElem.sendKeys(Keys.DELETE); //cleans text form, because @ remains before appended text
-    	passwordElem.clear(); //cleans text form, because @ remains before appended text
+		//cleans text form, because @ remains before appended text
+		emailLogin.sendKeys(Keys.CONTROL + "a");
+    	passwordElem.sendKeys(Keys.DELETE);
+    	passwordElem.clear(); //not enough
         passwordElem.sendKeys(password);
     }
    
@@ -83,9 +87,8 @@ public class LoginPage{
     	btnLogIn.click();
     }
     
-	@Step("Verify error text step.")
-    public void vefifyErrorText(String errorTextString) {
-    	 //wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("errorBlock")));
+	@Step("Verifies if error text is: \"{0}\" step.")
+    public void verifyErrorText(String errorTextString) {
     	 wait = new WebDriverWait(driver,5);
     	 wait.until(ExpectedConditions.visibilityOf(errorTextElem));
     	 Assert.assertEquals(errorTextElem.getText(), errorTextString);

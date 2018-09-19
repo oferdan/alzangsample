@@ -1,37 +1,46 @@
 package com.ferdano.alzangsample;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 
 import org.testng.annotations.Test;
 
 import com.ferdano.pagebjects.HomePage;
 import com.ferdano.pagebjects.LoginPage;
 import com.ferdano.pagebjects.RegistrationPage;
+import com.ferdano.utilities.Log;
 import com.ferdano.utilities.TestListener;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.BeforeClass;
+
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 
-//allure anotations
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+//allure annotations
 @Listeners({ TestListener.class })
-@Epic("Epic nazev testu v Allure")
-@Feature("Registrating with different credentials test.")
+@Epic("Alza.cz example tests.")
+@Feature("Registration tests.")
 
 public class RegistrationTest {
-	
 	private static WebDriver driver;
-	static RegistrationPage registrationPage; //deklarace
+	// Pages declaration
+	static RegistrationPage registrationPage;
 	static HomePage homePage;
 	static LoginPage loginPage; 
 	
 	
-
+	// DataProvider - parameterizes the test - email, password, phone combinations
+	// Can be moved to separate class
 	@DataProvider
 	public Object[][] dp() {
 		return new Object[][] { 
@@ -42,8 +51,11 @@ public class RegistrationTest {
 
 	@BeforeClass
 	public void beforeClass() {
-		WebDriverManager.firefoxdriver().setup(); //pro automaticke stazeni driveru bez nastavovani cesty
+		//Used for Maven - auto downloads latest webdriver binaries
+		//WebDriverManager.firefoxdriver().setup(); //Maven
 		driver = new FirefoxDriver(); // instance
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); //implicit wait
+		driver.manage().window().maximize(); //maximize browser window
 		
 		//instantiate Pages
 		homePage = new HomePage(driver);
@@ -51,7 +63,9 @@ public class RegistrationTest {
 		loginPage = new LoginPage(driver); //vytvoreni instance - konstruktor akceptuje driver	
 	}
 
-	@Test(dataProvider = "dp")
+	@Test (priority=0, description="Registering with different credentials.", dataProvider = "dp")
+	@Description("Registering with different credentials according to DataProvider.")
+	@Story("Registering.")
 	public void newRegistrationTest(String email, String password, String passwordConfirm, String phone) {
 		homePage.goToHomePage();
 		homePage.goToLoginPage();
@@ -64,17 +78,10 @@ public class RegistrationTest {
 		registrationPage.setPhone(phone);
 		//registrationPage.clickNext();
 	}
-
-	/*
-	@Test
-	public void newRegistrationTest() {
-		System.out.println("gogogogog");
-		registrationPage.goToRegPage();
-	}
-	*/
 	
 	@AfterClass
 	public void afterClass() {
+		Log.info("Quitting driver.");
 		driver.quit();
 	}
 
