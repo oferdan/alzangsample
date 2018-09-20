@@ -1,72 +1,79 @@
-2018-09-19 14:48:26.938 [main] INFO  com.ferdano.utilities.Log - ============================================================
-2018-09-19 14:48:26.948 [main] INFO  com.ferdano.utilities.Log - ===== Test Class: Nazev testu v TestNG is Starting... ======
-2018-09-19 14:48:26.948 [main] INFO  com.ferdano.utilities.Log - ============================================================
-2018-09-19 14:48:26.948 [main] INFO  com.ferdano.utilities.Log - ===== Test Class: Nazev testu v TestNG is Starting... ======
-2018-09-19 14:48:33.807 [main] INFO  com.ferdano.utilities.Log - ------------------------------------------------------------
-2018-09-19 14:48:33.808 [main] INFO  com.ferdano.utilities.Log - === Test Method: orderMostExpensiveTelevisionTest is Starting... ====
-2018-09-19 14:48:33.810 [main] INFO  com.ferdano.utilities.Log - ------------------------------------------------------------
-2018-09-19 14:48:33.811 [main] INFO  com.ferdano.utilities.Log - === Test Method: orderMostExpensiveTelevisionTest is Starting... ====
-2018-09-19 14:48:33.915 [main] INFO  com.ferdano.utilities.Log - Opening home page.
-2018-09-19 14:48:38.273 [main] INFO  com.ferdano.utilities.Log - Opening televisions.
-2018-09-19 14:48:43.981 [main] INFO  com.ferdano.utilities.Log - Sorting products.
-2018-09-19 14:48:46.171 [main] INFO  com.ferdano.utilities.Log - Opening product.
-2018-09-19 14:48:49.129 [main] INFO  com.ferdano.utilities.Log - Adding product to basket.
-2018-09-19 14:48:59.221 [main] ERROR com.ferdano.utilities.Log - FAILED Test: [TestClass name=class com.ferdano.alzangsample.OrderMostExpensiveTelevisionTest]: orderMostExpensiveTelevisionTest
-2018-09-19 14:48:59.241 [main] ERROR com.ferdano.utilities.Log - FAILED Test: [TestClass name=class com.ferdano.alzangsample.OrderMostExpensiveTelevisionTest]: orderMostExpensiveTelevisionTest
-2018-09-19 14:48:59.391 [main] INFO  com.ferdano.utilities.Log - Quitting driver.
-2018-09-19 14:49:04.222 [main] INFO  com.ferdano.utilities.Log - ------------------------------------------------------------
-2018-09-19 14:49:04.222 [main] INFO  com.ferdano.utilities.Log - === Test Method: invalidUsernameTest is Starting... ====
-2018-09-19 14:49:04.222 [main] INFO  com.ferdano.utilities.Log - ------------------------------------------------------------
-2018-09-19 14:49:04.222 [main] INFO  com.ferdano.utilities.Log - === Test Method: invalidUsernameTest is Starting... ====
-2018-09-19 14:49:04.242 [main] INFO  com.ferdano.utilities.Log - Opening home page.
-2018-09-19 14:49:07.554 [main] INFO  com.ferdano.utilities.Log - Filling forms.
-2018-09-19 14:49:08.053 [main] INFO  com.ferdano.utilities.Log - Clicking login.
-2018-09-19 14:49:08.316 [main] INFO  com.ferdano.utilities.Log - Verifying error text.
-2018-09-19 14:49:08.508 [main] INFO  com.ferdano.utilities.Log - PASSED Test: [TestClass name=class com.ferdano.alzangsample.LoginTest]: invalidUsernameTest
-2018-09-19 14:49:08.508 [main] INFO  com.ferdano.utilities.Log - PASSED Test: [TestClass name=class com.ferdano.alzangsample.LoginTest]: invalidUsernameTest
-2018-09-19 14:49:08.518 [main] INFO  com.ferdano.utilities.Log - ------------------------------------------------------------
-2018-09-19 14:49:08.518 [main] INFO  com.ferdano.utilities.Log - === Test Method: validLoginTest is Starting... ====
-2018-09-19 14:49:08.518 [main] INFO  com.ferdano.utilities.Log - ------------------------------------------------------------
-2018-09-19 14:49:08.518 [main] INFO  com.ferdano.utilities.Log - === Test Method: validLoginTest is Starting... ====
-2018-09-19 14:49:08.518 [main] INFO  com.ferdano.utilities.Log - Opening home page.
-2018-09-19 14:49:11.390 [main] INFO  com.ferdano.utilities.Log - Filling forms.
-2018-09-19 14:49:11.730 [main] INFO  com.ferdano.utilities.Log - Clicking login.
-2018-09-19 14:49:12.092 [main] INFO  com.ferdano.utilities.Log - PASSED Test: [TestClass name=class com.ferdano.alzangsample.LoginTest]: validLoginTest
-2018-09-19 14:49:12.092 [main] INFO  com.ferdano.utilities.Log - PASSED Test: [TestClass name=class com.ferdano.alzangsample.LoginTest]: validLoginTest
-2018-09-19 14:49:12.105 [main] INFO  com.ferdano.utilities.Log - Quitting driver
-2018-09-19 14:49:16.787 [main] INFO  com.ferdano.utilities.Log - ------------------------------------------------------------
-2018-09-19 14:49:16.788 [main] INFO  com.ferdano.utilities.Log - === Test Method: newRegistrationTest is Starting... ====
-2018-09-19 14:49:16.788 [main] INFO  com.ferdano.utilities.Log - ------------------------------------------------------------
-2018-09-19 14:49:16.788 [main] INFO  com.ferdano.utilities.Log - === Test Method: newRegistrationTest is Starting... ====
-2018-09-19 14:49:22.911 [main] INFO  com.ferdano.utilities.Log - PASSED Test: [TestClass name=class com.ferdano.alzangsample.RegistrationTest]: newRegistrationTest
-2018-09-19 14:49:22.911 [main] INFO  com.ferdano.utilities.Log - PASSED Test: [TestClass name=class com.ferdano.alzangsample.RegistrationTest]: newRegistrationTest
-2018-09-19 14:49:22.911 [main] INFO  com.ferdano.utilities.Log - ------------------------------------------------------------
-2018-09-19 14:49:22.911 [main] INFO  com.ferdano.utilities.Log - === Test Method: newRegistrationTest is Starting... ====
-2018-09-19 14:49:22.911 [main] INFO  com.ferdano.utilities.Log - ------------------------------------------------------------
-2018-09-19 14:49:22.921 [main] INFO  com.ferdano.utilities.Log - === Test Method: newRegistrationTest is Starting... ====
-2018-09-19 14:49:24.343 [main] ERROR com.ferdano.utilities.Log - FAILED Test: [TestClass name=class com.ferdano.alzangsample.RegistrationTest]: newRegistrationTest
-2018-09-19 14:49:24.343 [main] ERROR com.ferdano.utilities.Log - FAILED Test: [TestClass name=class com.ferdano.alzangsample.RegistrationTest]: newRegistrationTest
-2018-09-19 14:49:24.353 [main] INFO  com.ferdano.utilities.Log - Quitting driver.
-2018-09-19 14:49:28.767 [main] INFO  com.ferdano.utilities.Log - ------------------------------------------------------------
-2018-09-19 14:49:28.767 [main] INFO  com.ferdano.utilities.Log - === Test Method: sortingAscendProductTest is Starting... ====
-2018-09-19 14:49:28.767 [main] INFO  com.ferdano.utilities.Log - ------------------------------------------------------------
-2018-09-19 14:49:28.767 [main] INFO  com.ferdano.utilities.Log - === Test Method: sortingAscendProductTest is Starting... ====
-2018-09-19 14:49:28.797 [main] INFO  com.ferdano.utilities.Log - Opening home page.
-2018-09-19 14:49:31.799 [main] INFO  com.ferdano.utilities.Log - Opening televisions.
-2018-09-19 14:49:38.605 [main] INFO  com.ferdano.utilities.Log - Sorting products.
-2018-09-19 14:49:40.729 [main] INFO  com.ferdano.utilities.Log - Checking if products are sorted ascending.
-2018-09-19 14:49:40.979 [main] INFO  com.ferdano.utilities.Log - PASSED Test: [TestClass name=class com.ferdano.alzangsample.SortingProductTest]: sortingAscendProductTest
-2018-09-19 14:49:40.979 [main] INFO  com.ferdano.utilities.Log - PASSED Test: [TestClass name=class com.ferdano.alzangsample.SortingProductTest]: sortingAscendProductTest
-2018-09-19 14:49:40.989 [main] INFO  com.ferdano.utilities.Log - ------------------------------------------------------------
-2018-09-19 14:49:40.989 [main] INFO  com.ferdano.utilities.Log - === Test Method: sortingDescendProductTest is Starting... ====
-2018-09-19 14:49:40.989 [main] INFO  com.ferdano.utilities.Log - ------------------------------------------------------------
-2018-09-19 14:49:40.989 [main] INFO  com.ferdano.utilities.Log - === Test Method: sortingDescendProductTest is Starting... ====
-2018-09-19 14:49:40.989 [main] INFO  com.ferdano.utilities.Log - Opening home page.
-2018-09-19 14:49:42.423 [main] INFO  com.ferdano.utilities.Log - Opening televisions.
-2018-09-19 14:49:45.709 [main] INFO  com.ferdano.utilities.Log - Sorting products.
-2018-09-19 14:49:47.855 [main] INFO  com.ferdano.utilities.Log - Checking if products are sorted descending.
-2018-09-19 14:49:47.895 [main] INFO  com.ferdano.utilities.Log - PASSED Test: [TestClass name=class com.ferdano.alzangsample.SortingProductTest]: sortingDescendProductTest
-2018-09-19 14:49:47.895 [main] INFO  com.ferdano.utilities.Log - PASSED Test: [TestClass name=class com.ferdano.alzangsample.SortingProductTest]: sortingDescendProductTest
-2018-09-19 14:49:47.895 [main] INFO  com.ferdano.utilities.Log - Quitting driver.
-2018-09-19 14:49:48.475 [main] INFO  com.ferdano.utilities.Log - ===== Test Class: Nazev testu v TestNG is Ending... ======
-2018-09-19 14:49:48.515 [main] INFO  com.ferdano.utilities.Log - ===== Test Class: Nazev testu v TestNG is Ending... ======
+2018-09-20 10:19:03.478 [main] INFO  com.ferdano.utilities.Log - ============================================================
+2018-09-20 10:19:03.488 [main] INFO  com.ferdano.utilities.Log - ===== Test Class: Nazev testu v TestNG is Starting... ======
+2018-09-20 10:19:03.488 [main] INFO  com.ferdano.utilities.Log - ============================================================
+2018-09-20 10:19:03.488 [main] INFO  com.ferdano.utilities.Log - ===== Test Class: Nazev testu v TestNG is Starting... ======
+2018-09-20 10:19:09.706 [main] INFO  com.ferdano.utilities.Log - ------------------------------------------------------------
+2018-09-20 10:19:09.706 [main] INFO  com.ferdano.utilities.Log - === Test Method: orderMostExpensiveTelevisionTest is Starting... ====
+2018-09-20 10:19:09.706 [main] INFO  com.ferdano.utilities.Log - ------------------------------------------------------------
+2018-09-20 10:19:09.706 [main] INFO  com.ferdano.utilities.Log - === Test Method: orderMostExpensiveTelevisionTest is Starting... ====
+2018-09-20 10:19:09.806 [main] INFO  com.ferdano.utilities.Log - Opening home page.
+2018-09-20 10:19:13.352 [main] INFO  com.ferdano.utilities.Log - Opening televisions.
+2018-09-20 10:19:18.846 [main] INFO  com.ferdano.utilities.Log - Sorting products.
+2018-09-20 10:19:21.012 [main] INFO  com.ferdano.utilities.Log - Opening product.
+2018-09-20 10:19:23.376 [main] INFO  com.ferdano.utilities.Log - Adding product to basket.
+2018-09-20 10:19:25.152 [main] INFO  com.ferdano.utilities.Log - Continuing to basket.
+2018-09-20 10:19:26.026 [main] INFO  com.ferdano.utilities.Log - Continuing to shipping and payments page.
+2018-09-20 10:19:26.315 [main] INFO  com.ferdano.utilities.Log - Handling not in stock warning.
+2018-09-20 10:19:27.212 [main] INFO  com.ferdano.utilities.Log - Setting delivery method.
+2018-09-20 10:19:31.662 [main] INFO  com.ferdano.utilities.Log - Setting dispatching.
+2018-09-20 10:19:31.942 [main] INFO  com.ferdano.utilities.Log - Setting payment method.
+2018-09-20 10:19:35.062 [main] INFO  com.ferdano.utilities.Log - Continuing to order confirmation.
+2018-09-20 10:19:35.342 [main] INFO  com.ferdano.utilities.Log - PASSED Test: [TestClass name=class com.ferdano.alzangsample.OrderMostExpensiveTelevisionTest]: orderMostExpensiveTelevisionTest
+2018-09-20 10:19:35.342 [main] INFO  com.ferdano.utilities.Log - PASSED Test: [TestClass name=class com.ferdano.alzangsample.OrderMostExpensiveTelevisionTest]: orderMostExpensiveTelevisionTest
+2018-09-20 10:19:35.502 [main] INFO  com.ferdano.utilities.Log - Quitting driver.
+2018-09-20 10:19:40.274 [main] INFO  com.ferdano.utilities.Log - ------------------------------------------------------------
+2018-09-20 10:19:40.274 [main] INFO  com.ferdano.utilities.Log - === Test Method: invalidUsernameTest is Starting... ====
+2018-09-20 10:19:40.274 [main] INFO  com.ferdano.utilities.Log - ------------------------------------------------------------
+2018-09-20 10:19:40.274 [main] INFO  com.ferdano.utilities.Log - === Test Method: invalidUsernameTest is Starting... ====
+2018-09-20 10:19:40.284 [main] INFO  com.ferdano.utilities.Log - Opening home page.
+2018-09-20 10:19:43.544 [main] INFO  com.ferdano.utilities.Log - Filling forms.
+2018-09-20 10:19:43.906 [main] INFO  com.ferdano.utilities.Log - Clicking login.
+2018-09-20 10:19:44.156 [main] INFO  com.ferdano.utilities.Log - Verifying error text.
+2018-09-20 10:19:44.266 [main] INFO  com.ferdano.utilities.Log - PASSED Test: [TestClass name=class com.ferdano.alzangsample.LoginTest]: invalidUsernameTest
+2018-09-20 10:19:44.266 [main] INFO  com.ferdano.utilities.Log - PASSED Test: [TestClass name=class com.ferdano.alzangsample.LoginTest]: invalidUsernameTest
+2018-09-20 10:19:44.266 [main] INFO  com.ferdano.utilities.Log - ------------------------------------------------------------
+2018-09-20 10:19:44.266 [main] INFO  com.ferdano.utilities.Log - === Test Method: validLoginTest is Starting... ====
+2018-09-20 10:19:44.266 [main] INFO  com.ferdano.utilities.Log - ------------------------------------------------------------
+2018-09-20 10:19:44.266 [main] INFO  com.ferdano.utilities.Log - === Test Method: validLoginTest is Starting... ====
+2018-09-20 10:19:44.276 [main] INFO  com.ferdano.utilities.Log - Opening home page.
+2018-09-20 10:19:46.582 [main] INFO  com.ferdano.utilities.Log - Filling forms.
+2018-09-20 10:19:46.932 [main] INFO  com.ferdano.utilities.Log - Clicking login.
+2018-09-20 10:19:47.306 [main] INFO  com.ferdano.utilities.Log - PASSED Test: [TestClass name=class com.ferdano.alzangsample.LoginTest]: validLoginTest
+2018-09-20 10:19:47.306 [main] INFO  com.ferdano.utilities.Log - PASSED Test: [TestClass name=class com.ferdano.alzangsample.LoginTest]: validLoginTest
+2018-09-20 10:19:47.318 [main] INFO  com.ferdano.utilities.Log - Quitting driver
+2018-09-20 10:19:51.892 [main] INFO  com.ferdano.utilities.Log - ------------------------------------------------------------
+2018-09-20 10:19:51.892 [main] INFO  com.ferdano.utilities.Log - === Test Method: newRegistrationTest is Starting... ====
+2018-09-20 10:19:51.892 [main] INFO  com.ferdano.utilities.Log - ------------------------------------------------------------
+2018-09-20 10:19:51.892 [main] INFO  com.ferdano.utilities.Log - === Test Method: newRegistrationTest is Starting... ====
+2018-09-20 10:19:57.816 [main] INFO  com.ferdano.utilities.Log - PASSED Test: [TestClass name=class com.ferdano.alzangsample.RegistrationTest]: newRegistrationTest
+2018-09-20 10:19:57.816 [main] INFO  com.ferdano.utilities.Log - PASSED Test: [TestClass name=class com.ferdano.alzangsample.RegistrationTest]: newRegistrationTest
+2018-09-20 10:19:57.826 [main] INFO  com.ferdano.utilities.Log - ------------------------------------------------------------
+2018-09-20 10:19:57.826 [main] INFO  com.ferdano.utilities.Log - === Test Method: newRegistrationTest is Starting... ====
+2018-09-20 10:19:57.826 [main] INFO  com.ferdano.utilities.Log - ------------------------------------------------------------
+2018-09-20 10:19:57.826 [main] INFO  com.ferdano.utilities.Log - === Test Method: newRegistrationTest is Starting... ====
+2018-09-20 10:19:59.160 [main] ERROR com.ferdano.utilities.Log - FAILED Test: [TestClass name=class com.ferdano.alzangsample.RegistrationTest]: newRegistrationTest
+2018-09-20 10:19:59.160 [main] ERROR com.ferdano.utilities.Log - FAILED Test: [TestClass name=class com.ferdano.alzangsample.RegistrationTest]: newRegistrationTest
+2018-09-20 10:19:59.192 [main] INFO  com.ferdano.utilities.Log - Quitting driver.
+2018-09-20 10:20:05.195 [main] INFO  com.ferdano.utilities.Log - ------------------------------------------------------------
+2018-09-20 10:20:05.195 [main] INFO  com.ferdano.utilities.Log - === Test Method: sortingAscendProductTest is Starting... ====
+2018-09-20 10:20:05.195 [main] INFO  com.ferdano.utilities.Log - ------------------------------------------------------------
+2018-09-20 10:20:05.195 [main] INFO  com.ferdano.utilities.Log - === Test Method: sortingAscendProductTest is Starting... ====
+2018-09-20 10:20:05.205 [main] INFO  com.ferdano.utilities.Log - Opening home page.
+2018-09-20 10:20:08.291 [main] INFO  com.ferdano.utilities.Log - Opening televisions.
+2018-09-20 10:20:17.137 [main] INFO  com.ferdano.utilities.Log - Sorting products.
+2018-09-20 10:20:19.265 [main] INFO  com.ferdano.utilities.Log - Checking if products are sorted ascending.
+2018-09-20 10:20:19.545 [main] INFO  com.ferdano.utilities.Log - PASSED Test: [TestClass name=class com.ferdano.alzangsample.SortingProductTest]: sortingAscendProductTest
+2018-09-20 10:20:19.545 [main] INFO  com.ferdano.utilities.Log - PASSED Test: [TestClass name=class com.ferdano.alzangsample.SortingProductTest]: sortingAscendProductTest
+2018-09-20 10:20:19.545 [main] INFO  com.ferdano.utilities.Log - ------------------------------------------------------------
+2018-09-20 10:20:19.545 [main] INFO  com.ferdano.utilities.Log - === Test Method: sortingDescendProductTest is Starting... ====
+2018-09-20 10:20:19.545 [main] INFO  com.ferdano.utilities.Log - ------------------------------------------------------------
+2018-09-20 10:20:19.555 [main] INFO  com.ferdano.utilities.Log - === Test Method: sortingDescendProductTest is Starting... ====
+2018-09-20 10:20:19.555 [main] INFO  com.ferdano.utilities.Log - Opening home page.
+2018-09-20 10:20:22.351 [main] INFO  com.ferdano.utilities.Log - Opening televisions.
+2018-09-20 10:20:25.522 [main] INFO  com.ferdano.utilities.Log - Sorting products.
+2018-09-20 10:20:27.686 [main] INFO  com.ferdano.utilities.Log - Checking if products are sorted descending.
+2018-09-20 10:20:27.756 [main] INFO  com.ferdano.utilities.Log - PASSED Test: [TestClass name=class com.ferdano.alzangsample.SortingProductTest]: sortingDescendProductTest
+2018-09-20 10:20:27.756 [main] INFO  com.ferdano.utilities.Log - PASSED Test: [TestClass name=class com.ferdano.alzangsample.SortingProductTest]: sortingDescendProductTest
+2018-09-20 10:20:27.756 [main] INFO  com.ferdano.utilities.Log - Quitting driver.
+2018-09-20 10:20:28.492 [main] INFO  com.ferdano.utilities.Log - ===== Test Class: Nazev testu v TestNG is Ending... ======
+2018-09-20 10:20:28.532 [main] INFO  com.ferdano.utilities.Log - ===== Test Class: Nazev testu v TestNG is Ending... ======

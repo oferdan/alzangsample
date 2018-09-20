@@ -5,7 +5,7 @@
         <listener class-name="com.ferdano.utilities.TestListener"/>
   </listeners>
 	<!-- nazev testu -->
-	<test name="Nazev testu v TestNG" preserve-order="true">
+	<test name="Alza.cz sample tests" preserve-order="true">
 		<classes>
 			<!-- package.nazevTridy ktere chci mit v Test Suite -->
 			<class name="com.ferdano.alzangsample.OrderMostExpensiveTelevisionTest"></class>

@@ -23,8 +23,8 @@ import io.qameta.allure.Story;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-//allure annotations
 @Listeners({ TestListener.class })
+//allure annotations
 @Epic("Alza.cz example tests.")
 @Feature("Sorting tests.")
 

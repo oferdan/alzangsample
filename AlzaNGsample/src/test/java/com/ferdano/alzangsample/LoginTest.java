@@ -21,8 +21,8 @@ import io.qameta.allure.Story;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-//allure annotations
 @Listeners({ TestListener.class })
+//allure annotations
 @Epic("Alza.cz example tests.")
 @Feature("Log in tests.")
 
@@ -48,6 +48,7 @@ public class LoginTest{
 	}
 
 	@Test (priority=0, description="Log in with valid credentials.")
+	//allure annotations
 	@Description("Log in with valid credentials.")
 	@Story("Logging in with different credentials.")
 	public void validLoginTest() throws InterruptedException {
@@ -70,6 +71,7 @@ public class LoginTest{
 	}
 
 	@Test (priority=0, description="Log in with invalid credentials.")
+	//allure annotations
 	@Description("Log in with invalid credentials.")
 	@Story("Logging in with different credentials.")
 	public void invalidUsernameTest() throws InterruptedException {

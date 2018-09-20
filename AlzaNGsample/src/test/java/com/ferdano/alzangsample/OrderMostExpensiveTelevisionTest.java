@@ -29,8 +29,8 @@ import org.testng.annotations.AfterClass;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-//allure annotations
 @Listeners({ TestListener.class })
+//allure annotations
 @Epic("Alza.cz example tests.")
 @Feature("Ordering tests.")
 

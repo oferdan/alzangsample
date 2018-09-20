@@ -31,7 +31,7 @@ public class ProductPage {
 	// Product page elems
 	// ===================
 	// Add to basket button
-	@FindBy(className="btnx normal green buy single")
+	@FindBy(className="alzaico-f-basket")
 	WebElement addToBasketButtonElem;
 	
 	// Methods
