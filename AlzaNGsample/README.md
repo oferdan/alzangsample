@@ -38,9 +38,9 @@ $ allure serve target/allure-results
 ```
 
 ## Screenshots
-![Allure Overview](https://imgur.com/pZYEkR5 "Allure Overview")
-![Allure Graphs](https://imgur.com/1BjDQfE "Allure Graphs")
-![Allure Behaviors](https://imgur.com/QhdmXY5 "Allure Behaviors")
+![Allure Overview](https://imgur.com/pZYEkR5.png "Allure Overview")
+![Allure Graphs](https://imgur.com/1BjDQfE.png "Allure Graphs")
+![Allure Behaviors](https://imgur.com/QhdmXY5.png "Allure Behaviors")
 
 ## Log sample
 ```
