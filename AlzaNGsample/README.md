@@ -1,6 +1,6 @@
 # AlzaNGsample ![CI status](https://img.shields.io/badge/build-passing-brightgreen.svg)
 
-AlzaNGsample is my sample test automation project that demonstrates what I've learned using Selenium and TestNG. Test are for Czech ecommerce site Alza.cz
+AlzaNGsample is my sample test automation project that demonstrates what I've learned using Selenium and TestNG. Test are for Czech ecommerce site Alza.cz.
 More tests, features and refactoring to come.
 
 The most information comes from:

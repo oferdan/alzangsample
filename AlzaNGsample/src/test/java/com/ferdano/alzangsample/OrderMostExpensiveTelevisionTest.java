@@ -80,7 +80,7 @@ public class OrderMostExpensiveTelevisionTest {
 		productListingPage.sortDescend();
 		//open product
 		Log.info("Opening product.");
-		productListingPage.openProductOnPosition(1);
+		productListingPage.openProductOnPositionX(1); // universal locator, counting starts from 1
 		//add product to basket
 		Log.info("Adding product to basket.");
 		productPage.addToBasket();
@@ -116,6 +116,8 @@ public class OrderMostExpensiveTelevisionTest {
 		//Thread.sleep(3000);
 		Log.info("Setting payment method.");
 		shippingPaymentPage.paymentSetCash();
+		
+		//TODO not clickable, selenium doesnt recognize that
 		Log.info("Continuing to order confirmation.");
 		shippingPaymentPage.goToAdress();
 		
@@ -126,8 +128,8 @@ public class OrderMostExpensiveTelevisionTest {
 	@AfterClass (description="Class Level Teardown")
 	public void afterClass() {
 		//Log.endLog(this.getClass().getSimpleName()); //log end of class
-		Log.info("Quitting driver.");
-		driver.quit();
+		//Log.info("Quitting driver.");
+		//driver.quit();
 	}
 
 }

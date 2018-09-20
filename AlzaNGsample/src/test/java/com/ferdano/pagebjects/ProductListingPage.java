@@ -1,5 +1,6 @@
 package com.ferdano.pagebjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -62,10 +63,20 @@ public class ProductListingPage {
 	@FindBy(xpath = "//div[@id='boxes']//div[contains(@class, 'box browsingitem')][position()=2]//div[contains(@class, 'price')]//span[@class='c2']")
 	WebElement secondProductPriceElem;
 	
-	
 	// ========
 	// Methods
 	// ========
+	@Step("Open product on position: \"{0}\" step.")
+	public void openProductOnPositionX(Integer position) {
+		WebElement productOnPositionXElem = driver.findElement(By.xpath("//div[@id='boxes']//div[contains(@class, 'box browsingitem')][position()=" +position +"]//a[@class='name browsinglink']"));
+		productOnPositionXElem.click();
+	}
+	
+	@Step("Get price of product on position: \"{0}\" step.")
+	public String getPriceOfProductOnPositionX(Integer position) {
+		WebElement priceOfProductOnPositionXElem = driver.findElement(By.xpath("//div[@id='boxes']//div[contains(@class, 'box browsingitem')][position()=" +position +"]//div[contains(@class, 'price')]//span[@class='c2']"));
+		return priceOfProductOnPositionXElem.getText();
+	}
 
 	// sort descend
 	@Step("Sort product descend step.")
@@ -80,54 +91,26 @@ public class ProductListingPage {
 		priceAscElem.click();
 		Thread.sleep(2000);
 	}
-
-	// TODO zmena z public pro zamezeni pouzivani jine funkce nez orderProductOnPosition v testu
-	@Step("Open product page of first product in list step.")
-	public void openFirstProduct() {
-		firstProductElem.click();
-	}
-	
-	@Step("Open second product page step.")
-	public void openSecondProduct() {
-		secondProductElem.click();
-	}
-	
-	@Step("Open product page of product on position: \"{0}\" step.")
-	public void openProductOnPosition(Integer position) {
-		switch (position) {
-		case 1: openFirstProduct();
-		break;
-		case 2: openSecondProduct();
-		break;
-		default: System.out.println("Error - didnt choose option on switch");
-		break;
-		}
-	}
-	
-	@Step("Get first product price step.")
-	public String getFirstProductPrice() {
-		return firstProductPriceElem.getText();
-	}
-	
-	@Step("Get first product price step.")
-	public String getSecondProductPrice() {
-		return secondProductPriceElem.getText();
-	}
 	
 	// get price of first and second product in product listing in String, replace all but numbers, convert to Integer, compare values
-	//TODO WARNING: not working for floating prices - especially excl.VAT and EUR prices with cents
+	//FIXED WARNING: not working for floating prices - especially excl.VAT and EUR prices with cents
+	// fix: update of REGEX - remove all but "0-9", "." , "," replace "," to "." = universal comparison
 	// ALSO CZ/SK (,) and English (.) floating point separators are different!
 	// For prices in Koruna - remove last two chars ",-" for floating excl.VAT or EUR convert "1,1" to float
 	// Price in Koruna excl.VAT example: "13,215,-"
 	// Price in EUR English example: "€8.90"
 	// Price in EUR Slovak example: "€77,90"
+	// match regex  [0-9]*[,.]?[0-9]+
 	@Step("Check by comparing prices that sorting works step.")
 	public boolean isPriceOfFistBiggerThanSecondProduct() {
-		int firstProductPrice=Integer.parseInt(getFirstProductPrice().replaceAll("[^0-9]", "")); 
-		System.out.println("cena prvniho float: "+firstProductPrice);
-
-		int secondProductPrice=Integer.parseInt(getSecondProductPrice().replaceAll("[^0-9]", ""));
-		System.out.println("cena druhyho float: "+secondProductPrice);
+		System.out.println(">>>String: "+getPriceOfProductOnPositionX(1));
+		System.out.println(">>>String: "+getPriceOfProductOnPositionX(2));
+		
+		float firstProductPrice=Float.parseFloat(getPriceOfProductOnPositionX(1).replaceAll("[^0-9.,]", "").replaceAll(",","."));
+		System.out.println(">>>cena prvniho float: "+firstProductPrice);
+		
+		float secondProductPrice=Float.parseFloat(getPriceOfProductOnPositionX(2).replaceAll("[^0-9.,]", "").replaceAll(",","."));
+		System.out.println(">>>cena druhyho float: "+secondProductPrice);
 		
 		if(firstProductPrice>secondProductPrice) 
 			return true;	

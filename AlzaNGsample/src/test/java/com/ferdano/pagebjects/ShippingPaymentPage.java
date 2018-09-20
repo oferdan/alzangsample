@@ -52,7 +52,7 @@ public class ShippingPaymentPage {
 	// Shipping Methods
 	// ---------------
 	// @FindBy(id="deliveryContainer-595-17118806")
-	@FindBy(xpath = "//div[@id='order2Delivery']//div[@data-deliveryid='595']")
+	@FindBy(xpath = "//div[@id='order2Delivery']//label[@for='deliveryCheckbox-595']")
 	WebElement deliveryPrg7Elem;
 
 	// shipping checkbox
@@ -70,7 +70,7 @@ public class ShippingPaymentPage {
 
 	// payments
 	// --------
-	@FindBy(xpath = "//div[@id='order2Payment']//div[@data-paymentid='101']")
+	@FindBy(xpath = "//div[@id='order2Payment']//label[@for='paymentCheckbox-101']")
 	WebElement paymentCashElem;
 
 	// payments checkbox
@@ -92,8 +92,8 @@ public class ShippingPaymentPage {
 
 	@Step("Set delivery to Prague 7 step.")
 	public void setDeliveryToPrg7() throws InterruptedException {
-		//if (shippingPrg7CheckBoxElem.isSelected()) { //
-		if (shippingPrg7CheckBoxElem.getAttribute("checked") != null) { 
+		if (shippingPrg7CheckBoxElem.isSelected()) { //
+		//if (shippingPrg7CheckBoxElem.getAttribute("checked") != null) { 
 		} else {
 			deliveryPrg7Elem.click();
 		}
@@ -107,10 +107,10 @@ public class ShippingPaymentPage {
 	}
 
 	//TODO not working
-	@Step("Set payment to cash.")
+	@Step("Set payment to cash step.")
 	public void paymentSetCash() throws InterruptedException {
-		//if (paymentCashCheckBoxElem.isSelected()) {
-		if (paymentCashCheckBoxElem.getAttribute("checked") != null) {
+		if (paymentCashCheckBoxElem.isSelected()) {
+		//if (paymentCashCheckBoxElem.getAttribute("checked") != null) {
 
 		} else {
 			paymentCashElem.click();
